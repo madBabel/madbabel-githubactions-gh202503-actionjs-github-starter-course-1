@@ -10,9 +10,9 @@ jobs:
               uses: actions/checkout@v2
             - name: Check for dependency updates
               uses: ./.github/actions/js-dependency-update        
-              with:
-                  base-branch: 'main'
-                  target-branch: 'update-dependencies'
-                  working-directory: 'react-app'
-                  gh-token: ${{ secrets.GITHUB_TOKEN }}
-                  debug: 'true'               
+              #with:
+                #  base-branch: 'main'
+                #  target-branch: 'update-dependencies'
+                #  working-directory: 'react-app'
+                #  gh-token: ${{ secrets.GITHUB_TOKEN }}
+                #  debug: 'true'               
