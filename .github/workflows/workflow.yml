@@ -1,0 +1,18 @@
+name: Custom Actions JS
+on: 
+    workflow_dispatch: 
+run-name: Custom Actions - JS
+jobs:
+    dependency-update:
+        runs-on: ubuntu-latest 
+        steps:      
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Check for dependency updates
+              uses: ./.github/actions/js-dependency-update        
+              with:
+                  base-branch: 'main'
+                  target-branch: 'update-dependencies'
+                  working-directory: 'react-app'
+                  gh-token: ${{ secrets.GITHUB_TOKEN }}
+                  debug: 'true'               
